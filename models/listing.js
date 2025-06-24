@@ -10,11 +10,12 @@ const listingSchema=new Schema({
     },
     description: String,
     
-    image: {
+       image: {
         type: String,
         default: "https://unsplash.com/photos/a-mountain-under-a-starry-night-sky-tuRraTuflBA",
         set:  (v) => v === "https://unsplash.com/photos/a-mountain-under-a-starry-night-sky-tuRraTuflBA" ? "default valur" : v,
     },
+
     price: Number,
     location: String,
     country: String,
@@ -24,16 +25,19 @@ const listingSchema=new Schema({
             ref: "Review",
         },
     ],
+    owner:{
+        type: Schema.Types.ObjectId,
+        ref:"User",
 
-
+    },
 });
-
 listingSchema.post("findOneAndDelete",async(listing) =>{
     if(listing){
         await Review.deleteMany({_id :{$in: listing.reviews}});
-    }
-    
+    } 
 });
-
 const Listing = mongoose.model("Listing",listingSchema);
 module.exports = Listing;
+
+
+

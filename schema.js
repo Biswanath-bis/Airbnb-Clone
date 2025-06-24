@@ -1,3 +1,7 @@
+
+//VALIDATION FOR SCHEMA        
+
+
 const Joi = require('joi');
 
 module.exports.listingSchema = Joi.object({
