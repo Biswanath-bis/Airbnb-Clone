@@ -11,9 +11,8 @@ const listingSchema=new Schema({
     description: String,
     
        image: {
-        type: String,
-        default: "https://unsplash.com/photos/a-mountain-under-a-starry-night-sky-tuRraTuflBA",
-        set:  (v) => v === "https://unsplash.com/photos/a-mountain-under-a-starry-night-sky-tuRraTuflBA" ? "default valur" : v,
+       url:String,
+       filename:String,
     },
 
     price: Number,
