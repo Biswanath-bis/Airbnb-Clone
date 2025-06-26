@@ -50,9 +50,9 @@ const sessionOption = {
   },
 };  
 
-app.get("/", (req, res) => {
-  res.send("Hi, I am root");
-});
+// app.get("/", (req, res) => {
+//   res.send("Hi, I am root");
+// });
 
 app.use(session(sessionOption));//by default har ek request ke saath  ek season id browser ke undar ja kar save ho jayaga in the form cookie
 app.use(flash());//used flash
