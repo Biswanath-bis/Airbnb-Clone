@@ -13,6 +13,14 @@ module.exports.renderNewForm = (req, res) => {
 };
 
 
+module.exports.filterslistings=async(req,res)=>{
+  const{category}=req.params;
+  console.log(category,".............");
+ const allListings=  await Listing.find({category});
+ console.log(allListings,"........");
+ res.render("listings/category.ejs",{allListings});
+};
+
 //Show Route
 module.exports.showListing = async (req, res) => {
   let { id } = req.params;
