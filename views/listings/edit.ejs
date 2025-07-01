@@ -67,8 +67,26 @@
           class="form-control"
           required
          />
-         <div class="invalid-feedback"> Location Should be Valid!</div>
+          <div class="invalid-feedback"> Location Should be Valid!</div>
         </div>
+
+         <div class="mb-3">
+                    <label for="category" class="form-label">Type: </label>
+                <select name="listing[category]"id="category"  class="form-select" aria-label="trending" required>
+                    <option value="" disabled selected><%= listing.category%></option>
+                    <option value="trending">trending</option>
+                    <option value="rooms">rooms</option>
+                    <option value="iconic cities">iconic cities</option>
+                    <option value="mountains">mountains</option>
+                    <option value="castles">castles</option>
+                    <option value="amazing pools">amazing pools</option>
+                    <option value="farms">farms</option>
+                    <option value="arctic">arctic</option>
+                    <option value="beach">beach</option>
+                    <option value="boat">boat</option>
+               </select>
+             <div class="invalid-feedback">Select a category</div>
+        </div>  
         
         <button class="btn btn-dark edit-btn mt-3">Edit</button>
         <br>

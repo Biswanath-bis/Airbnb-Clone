@@ -24,7 +24,7 @@
 
       <div class="mb-3">
         <lebel for="image" class="form-label">upload  Image:</lebel>
-        <input type="file"  class="form-control" name="listing[image]" id="image"required>
+        <input type="file"  class="form-control" name="listing[image]" id="image" required>
       </div>
 
 
@@ -40,7 +40,6 @@
           <input type="text" class="form-control"name="listing[price]"id="price" placeholder="Enter Your Price" required>
           <div class="invalid-feedback">Price should be valid</div>
          </div>
-    
          
       </div> 
         
@@ -50,6 +49,26 @@
         <input type="text" name="listing[location]" class="form-control" id="location" placeholder="Enter Your Location" required>
         <div class="invalid-feedback">Location should be valid</div>
        </div>
+
+        <div class="mb-3">
+                    <label for="category" class="form-label">Type: </label>
+                <select name="listing[category]" id="category" class="form-select" aria-label="trending" required>
+                    <option value="" disabled selected>Select Types Here</option>
+                    <option value="trending">trending</option>
+                    <option value="rooms">rooms</option>
+                    <option value="iconic cities">iconic cities</option>
+                    <option value="mountains">mountains</option>
+                    <option value="castles">castles</option>
+                    <option value="amazing pools">amazing pools</option>
+                    <option value="farms">farms</option>
+                    <option value="arctic">arctic</option>
+                    <option value="beach">beach</option>
+                    <option value="boat">boat</option>
+               </select>
+             <div class="invalid-feedback">Select a category</div>
+        </div>        
+
+
     
        <button class="btn btn-dark add-btn mb-3">Add</button>
       <br>
