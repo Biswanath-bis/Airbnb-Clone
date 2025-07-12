@@ -19,7 +19,7 @@ module.exports.signUp = async (req,res) => {
           return next(err);
         }
          req.flash("success","Welcome to WnaderLust");
-    res.redirect("/listings");
+         res.redirect("/listings");
     });
   }catch(e){
     req.flash("error",e.message);

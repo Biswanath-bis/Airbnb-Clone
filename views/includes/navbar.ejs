@@ -33,23 +33,30 @@
         <div class="navbar-nav">
           <a class="nav-link" href="/listings">Explore</a>
         </div>
-
+          <!-- search -->
          <div class="navbar-nav ms-auto">
            <form class="d-flex" role="search">
             <input class="form-control me-2 search-input" type="search" placeholder="Search destinations"/>
             <button class="btn btn-search" type="submit"><i class="fa-solid fa-magnifying-glass"></i>Search</button>
            </form>
          </div>
+
          <div class="navbar-nav ms-auto">
           <a class="nav-link" href="/listings/new">Airbnb your Home</a>
-         <% if(!currUser) { %> 
-            <a class="nav-link" href="/signup"><b>Sign Up</b></a>
-            <a class="nav-link" href="/login"><b>Log in</b></a>
-          <% } %>
-
-          <% if(currUser){ %>
-          <a class="nav-link" href="/logout"><b>Log out</b></a>
-          <% } %>
+        
+         <li class="nav-item dropdown">
+             <a class="nav-link dropdown-toggle" href="#" id="userMenu" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+               <i class="fa-solid fa-user"></i>
+            </a>
+            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userMenu">
+               <% if (!currUser) { %>
+                 <li><a class="dropdown-item" href="/login">Log In</a></li>
+                 <li><a class="dropdown-item" href="/signup">Sign Up</a></li>
+             <% } else { %>
+                 <li><a class="dropdown-item" href="/logout">Log Out</a></li>
+             <% } %>
+            </ul>
+         </li>
           <!-- <a class="nav-link disabled" aria-disabled="true">Disabled</a> -->
         </div>
       </div>
